@@ -21,3 +21,5 @@ staticfiles/
 .vscode/
 .idea/
 *.swp
+test/
+run.txt
