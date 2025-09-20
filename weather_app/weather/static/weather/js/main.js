@@ -3,7 +3,8 @@ import {
     addButtonsDayClickEvent,
     render_location_selector,
     displayLocationName,
-    showLoading
+    showLoading,
+    displayWeatherDay,
 } from "./index.js";
 import { updateChart } from "./chart.js";
 
@@ -22,6 +23,13 @@ async function fetchWeather(location, day_index) {
         showLoading(false);
         // console.log("DATA: ", data.data);
         displayLocationName(location);
+        // display data
+        displayWeatherDay(
+            data.data.temperature_max,
+            data.data.temperature_min,
+            data.data.day_description,
+            data.data.night_description
+        )
         localStorage.setItem('lastLocation', location);
     } catch (err) {
         console.error("ERROR:", err);

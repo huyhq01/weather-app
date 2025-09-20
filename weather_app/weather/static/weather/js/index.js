@@ -109,3 +109,11 @@ export function resetButtonsDay() {
 export function displayLocationName(location) {
   document.querySelector('#LocationName').innerText ='Thời tiết tại ' + list_location[location];
 }
+
+
+export function displayWeatherDay(maxTemp, minTemp, dayDescription, nightDescription) {
+  const weatherDay = document.querySelector('#weather-day');
+  weatherDay.querySelector('#day-temp').innerText = minTemp + '° - ' + maxTemp + '°';
+  weatherDay.querySelector('#day-description').innerText = dayDescription;
+  weatherDay.querySelector('#night-description').innerText = nightDescription;
+}

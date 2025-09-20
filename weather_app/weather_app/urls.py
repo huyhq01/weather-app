@@ -17,8 +17,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
+
+
+def navigation(request):
+    return render(request, "navigation.html")
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("weather/", include("weather.urls")),
+    path("", navigation, name="navigation"),
 ]
