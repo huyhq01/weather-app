@@ -6,28 +6,34 @@
 {% endblock %}
 
 {% block body %}
-<div style="padding-bottom: 16px;">
-    <select id="locationSelector" style="width: 300px; padding: 8px; font-size: 14px;"></select>
-    <button id="btn-submit" style="margin-top: 10px; padding: 8px 16px;" type="submit">Xem thời tiết</button>
-    <h2 id="LocationName"></h2>
-</div>
+<table>
+  <tr style="text-align: left;">
+    <th>
+      <div style="padding-bottom: 16px;">
+        <select id="locationSelector" style="width: 300px; padding: 8px; font-size: 14px;"></select>
+        <button id="btn-submit" style="margin-top: 10px; padding: 8px 16px;" type="submit">Xem thời tiết</button>
+        <h2 id="LocationName"></h2>
+      </div>
 
-
-<div class="block-select-day">
-    <button class="btn-day" data-index="0" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="1" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="2" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="3" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="4" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="5" aria-selected="true">00/00</button>
-    <button class="btn-day" data-index="6" aria-selected="true">00/00</button>
-</div>
-
-<div id="weather-day">
-  <p>Nhiệt độ trong ngày: <span id="day-temp"></span></p>
-  <p>Ban ngày: <span id="day-description"></span></p>
-  <p>Chiều tối: <span id="night-description"></span></p>
-</div>
+      <div class="block-select-day">
+        <button class="btn-day" data-index="0" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="1" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="2" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="3" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="4" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="5" aria-selected="true">00/00</button>
+        <button class="btn-day" data-index="6" aria-selected="true">00/00</button>
+      </div>
+    </th>
+    <th>
+      <div id="weather-day">
+        <p>Nhiệt độ trong ngày: <span id="day-temp"></span></p>
+        <p>Ban ngày: <span id="day-description"></span></p>
+        <p>Chiều tối: <span id="night-description"></span></p>
+      </div>
+    </th>
+  </tr>
+</table>
 
 <div style="position: relative; width: 70%;">
   <canvas id="weatherChart"></canvas>
