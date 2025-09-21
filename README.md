@@ -43,3 +43,31 @@ Dự án nhằm tự học, demo. Có thể xem được thông tin (trong 24h, 
  # Chạy chương trình
  python manage.py runserver
  ```
+
+
+### Dùng docker đã export image:
+Tải file .tar https://github.com/huyhq01/weather-app/releases/tag/v0.1
+
+Vào cmd ở thư mục chứa file, dòng này sẽ load image trong file tar vào docker:
+```bash
+docker load -i weather-app.tar
+```
+
+Tạo và chạy container từ image khi load khi nãy:
+```bash
+docker run -d -p 5000:8000 weather-app
+```
+-d
+Detached mode: Chạy container ở chế độ nền (background), không chiếm terminal của bạn.
+Nếu không dùng -d, container sẽ chạy ở chế độ foreground và bạn sẽ thấy log trực tiếp trong terminal.
+*Thay đổi số 5000 tùy ý vì nó là cổng của máy thực, trong app thì chạy port 8000 
+
+Nếu muốn tạo container trước:
+```bash 
+docker create --name my-container -p 8000:8000 weather-app:latest
+```
+Chạy container:
+```bash
+docker start my-container
+```
+
