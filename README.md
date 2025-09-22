@@ -45,15 +45,24 @@ Dự án nhằm tự học, demo. Có thể xem được thông tin (trong 24h, 
  ```
 
 
-### Dùng docker đã export image:
-Tải file .tar https://github.com/huyhq01/weather-app/releases/tag/v0.1
+### Dùng docker 
+Load image bằng một 2 cách dưới rồi chạy
 
+*Cách 1: load export image:*
+Tải file .tar https://github.com/huyhq01/weather-app/releases/tag/v0.1
 Vào cmd ở thư mục chứa file, dòng này sẽ load image trong file tar vào docker:
 ```bash
 docker load -i weather-app.tar
 ```
 
-Tạo và chạy container từ image khi load khi nãy:
+*Cách 2: Docker Hub*
+```bash
+# pull image
+docker pull sonas1001/weather-app:latest
+```
+
+Vậy là đã có image, giờ thì tạo container và chạy:
+Tạo và chạy container (tùy chọn mặc định) từ image load khi nãy:
 ```bash
 docker run -d -p 5000:8000 weather-app
 ```
@@ -62,7 +71,7 @@ Detached mode: Chạy container ở chế độ nền (background), không chi�
 Nếu không dùng -d, container sẽ chạy ở chế độ foreground và bạn sẽ thấy log trực tiếp trong terminal.
 *Thay đổi số 5000 tùy ý vì nó là cổng của máy thực, trong app thì chạy port 8000 
 
-Nếu muốn tạo container trước:
+Nếu muốn tạo container trước có nhiều tùy chọn hơn:
 ```bash 
 docker create --name my-container -p 8000:8000 weather-app:latest
 ```
